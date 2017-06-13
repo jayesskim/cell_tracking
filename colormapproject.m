@@ -24,7 +24,6 @@ filename2 = [path2,file2];
 [original2] = count_cells_overlay02(filename2);
 
 %% Image 2
-
 figure
 imshow(original2{1},'ColorMap',cmap2);
 
@@ -36,14 +35,11 @@ end
 
 %% Overlayed Image
 
-axes
+figure
 for n = 1:numel(original)
-    imshow(original{n},'Colormap',cmap);
+    imshow(original{n},'Colormap',cmap)
     hold on
     h = image(mim_rgb{n}); a = 0.8;
-    set(h,'AlphaData',(mimg{n}>0).*a);
+    set(h,'AlphaData',(mimg{n}>0).*a)
     drawnow limitrate
 end
-
-
-
